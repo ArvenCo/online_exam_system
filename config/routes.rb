@@ -10,8 +10,12 @@ Rails.application.routes.draw do
     resources :student
   end
 
-  get "up" => "rails/health#show", as: :rails_health_check
+  namespace :main do
+    resources :subject
+  end
 
+  get "up" => "rails/health#show", as: :rails_health_check
+  root "instructor/subject#index"
   # Defines the root path route ("/")
   # root "posts#index"
 end

@@ -10,7 +10,7 @@ class SignUp::InstructorController < ApplicationController
             @instructor = Instructor.create(user_id: @user.id)
             session[:user_id] = @user.id
             session[:instructor_id] = @instructor.id
-            
+            redirect_to instructor_subject_index_path
         else
             render:new
         end
