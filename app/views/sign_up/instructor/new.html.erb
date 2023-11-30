@@ -4,6 +4,17 @@
         <p  class="fs-1 text-center fw-medium">Signup as Instructor</p>
         <div class="card-body" >
             <%= form_with model: @user, url: {:action=>"create"}, class: "w-100" do |form|  %>
+            <% if @user.errors.any? %>
+            <div class="alert alert-danger">
+                <% @user.errors.full_messages.each do |message| %>
+                <div>
+                    <%= message %>
+                </div>
+                <% end %>
+
+            </div>
+            <% end %>
+            
             <div class="mb-3">
                 <%= form.label :name%>
                 <%= form.text_field :name, class: "form-control" %>

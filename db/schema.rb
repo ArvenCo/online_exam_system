@@ -26,11 +26,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_061005) do
   end
 
   create_table "subjects", force: :cascade do |t|
-    t.integer "insructor_id", null: false
+    t.integer "instructor_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["insructor_id"], name: "index_subjects_on_insructor_id"
+    t.index ["instructor_id"], name: "index_subjects_on_instructor_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,5 +43,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_30_061005) do
 
   add_foreign_key "instructors", "users"
   add_foreign_key "students", "users"
-  add_foreign_key "subjects", "insructors"
+  add_foreign_key "subjects", "instructors"
 end
