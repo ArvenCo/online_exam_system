@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   namespace :sign_up do
     resources :instructor
+    resources :student
   end
 
   get "up" => "rails/health#show", as: :rails_health_check
