@@ -1,0 +1,31 @@
+<div class="mt-5 d-flex justify-content-center">
+    <div class="card w-25">
+
+        <h1>Sign up as Instructor</h1>
+        <div class="card-body" >
+            <%= form_with model: @user, url: {:action=>"create"}, class: "w-100" do |form|  %>
+            <div class="mb-3">
+                <%= form.label :name%>
+                <%= form.text_field :name, class: "form-control" %>
+            </div> 
+            <div class="mb-3">
+                <%= form.label :username%>
+                <%= form.text_field :username, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+                <%= form.label :password%>
+                <%= form.password_field :password, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+                <%= form.label :password_confirmation%>
+                <%= form.password_field :password_confirmation, class: "form-control" %>
+            </div>
+            <div class="mb-3 d-flex justify-content-center">
+                <%= form.submit "Sign up", class: "btn btn-primary w-75"%>
+            </div>
+         <% end %>
+        </div>
+    </div>
+    
+        
+</div>
