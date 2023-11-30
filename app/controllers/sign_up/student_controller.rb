@@ -6,9 +6,7 @@ class SignUp::StudentController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            @student = Student.create(user_id: @user.id)
             session[:user_id] = @user.id
-            session[:student_id] = @student.id
         else
             render:new
         end

@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 
   namespace :main do
     resources :subject
-  end
+  end 
+
+  get "/login", to: 'session#new' 
+  post "/login", to: 'session#create'
+  delete "/logout", to: 'session#destroy'
 
   get "up" => "rails/health#show", as: :rails_health_check
   root "instructor/subject#index"
