@@ -1,5 +1,33 @@
 <%= render "partial/navbar" %>
 
-<div>
+<div class="container">
     <p class="ps-3">Subject Index</p>
+    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Add New Subject
+    </button>
+
+    
+    
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Add Subject</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <%= form_with model: @new_subject, url: {:action => "create"} do |form|%>
+            <!-- Modal -->
+            <div class="modal-body">
+                <%= form.label :name%>
+                <%= form.text_field :name, class: "form-control" %>
+            </div>
+            <div class="modal-footer">
+                <%= form.submit "Submit", class: "btn btn-primary"%>
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>

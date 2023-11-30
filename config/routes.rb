@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :student
   end
 
-  namespace :main do
+  namespace :instructor do
     resources :subject
   end 
 

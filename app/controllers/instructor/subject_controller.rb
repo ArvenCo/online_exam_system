@@ -1,5 +1,6 @@
 class Instructor::SubjectController < ApplicationController
     def index
+        @new_subject = Subject.new
         if session[:user_id]
             @user = User.find_by(id: session[:user_id])
             if @user
@@ -15,5 +16,7 @@ class Instructor::SubjectController < ApplicationController
         end
 
     end
+
+    
 
 end
