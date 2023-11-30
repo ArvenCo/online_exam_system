@@ -6,7 +6,11 @@
         Add New Subject
     </button>
 
-    
+    <% @subjects.each do |subject| %>
+        <div>
+            <%= subject %>
+        </div>
+    <% end %>
     
 </div>
 

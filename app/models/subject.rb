@@ -1,3 +1,4 @@
 class Subject < ApplicationRecord
-  belongs_to :insructor
+  belongs_to :instructor
+  validates :name, presence:true 
 end
